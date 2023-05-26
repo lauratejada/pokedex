@@ -1,0 +1,425 @@
+@charset "utf-8";
+
+:root{
+    --app-header-font-color: #fff;
+    --app-button-color: #EB7407;
+    --app-footer-color: #f3f0f0;  
+    --app-footer-font-color: #444; 
+}
+
+body {
+    color: #fff;
+    background: #1A1924;
+}
+
+/* ------------------------------- */
+/* HEADER                           */
+/* ------------------------------- */
+
+header {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    height: 60px;
+    width: 100%;
+    color: var(--app-header-font-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bg-dark {
+    background-color: #0c0c0c;
+}
+
+header h1 {
+    line-height: 60px;
+    font-weight: 900;
+}
+
+header .flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .title h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    line-height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    font-size: 0;
+}
+
+nav ul li {
+    display: inline;
+    line-height: 60px;
+}
+
+nav ul li a, .nav-3bar i {
+    color: var(--app-header-font-color);
+    line-height: 60px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease-in-out;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-3bar i {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {  /*  .nav-3bar i:hover  */
+    color: var(--app-button-color);
+    background-color: transparent;
+    /*display: inline-flex; */
+    /*border-bottom: 2px solid var(--app-button-color); */
+}
+
+li a.active, li a:hover {
+    text-decoration: none;
+    color: var(--app-button-color);
+    background-color: transparent;
+}
+
+@media (max-width:768px) {
+    nav > ul {
+        display: none;
+    }
+
+    .nav-3bar:first-child {
+        display: block;
+        text-align: right;
+    }
+
+    nav ul li {
+        text-align: right;  
+    }
+
+    nav ul li ~ li {
+        border-top: 1px solid rgba(250, 250, 250, 0.1);
+    }
+
+    nav ul li a:hover {
+        border-bottom: none;
+    }
+
+    .show-menu-responsive {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+    }
+
+    .show {
+        display: grid;
+    }
+
+    .not-show {
+        display: none;
+    }
+}
+
+@media (min-width:768px) {
+    nav > ul {
+        display: block;
+    }
+    .nav-3bar {
+        display: none;
+    }    
+}
+
+/************/
+/* BANNER */
+/************/
+
+section.banner{
+    margin-top: 60px;
+    background-image: url(../images/pokemon-banner.jpg);
+    background-position: 50%;
+    background-size: cover;
+    height: 50vh;
+}
+
+main {
+    padding-bottom: 60px;
+    height: min-content(100vh, auto);
+    scroll-behavior: auto;
+}
+
+.container {
+    width: min(100% - 30px, 1200px);  
+    margin-inline: auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    align-content: center;
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+}
+
+section h1 {
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+input[type='submit'], button, .button {
+    padding: 10px 35px;
+    background-color: var(--app-button-color);
+    text-transform: uppercase;
+    color: #fff;
+  /*  width: calc(20% - 10px); */
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+input[type='submit']:hover , button:hover, .button:hover {
+    opacity: 0.7;
+}
+
+input ~ input {
+    margin-left: 10px;
+}
+
+
+/*********************/
+/* POKEMON - DETAILS */
+/*********************/
+section.pokemon-details{
+    height: calc(100vh - 120px);
+    margin-top: 60px;
+}
+
+div.pokemon-profile {
+    display: grid;
+    justify-content: center;
+}
+
+.pokemon-profile  div {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pokemon-profile-data {
+    margin-top: 0px;
+}
+
+div.pokemon-image, h2 {
+    text-align: center;
+}
+
+.pokemon-image img{
+    margin-top: 50px;
+    height: 220px;
+    width: 220px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #dcdcdc;
+}
+
+.pokemon-name > h2 {
+    font-size: 34px;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+}
+
+div.pokemon-profile-data {
+    display: grid;
+    grid-auto-flow: column;
+
+}
+
+.pokemon-profile-data > div ~ .pokemon-profile-data > div {
+    margin-left: 10px;
+}
+
+.pokemon-repositories{
+    margin-top: 50px;
+    display: grid;
+    place-content: center;
+}
+
+.pokemon-profile-data > div > span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    padding: 5px 25px;
+    line-height: 16px;
+}
+
+.pokemon-profile-data > div > p {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.goto-btn{
+    margin-top: 40px !important;
+}
+
+/***/
+
+.catalog{
+    margin-top: 50px;
+}
+
+.grid {
+    display: grid;
+    /* this helps to reorganize the grid on mobile and destops autotically */
+    /*grid-template-columns: repeat(auto-fit, minmax(320px, 70vw));*/
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.pokemon-container {
+    display: grid;
+    align-content: end;
+    justify-content: center;
+    background-color: #353341;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #1A1924;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.pokemon-container:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.pokemon-container h4 {
+    text-align: center;
+    line-height: 16px;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.buttons {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.btn-add {
+    margin-left: 10px;
+}
+
+.btn-sort {
+    width: 131px;
+}
+
+/* ------------------------------- */
+/*       Form                      */
+/* ------------------------------- */
+.error-message{
+    line-height: 15px;
+    height: 15px;
+    font-size: 12px;
+    color: rgb(219, 0, 0);
+    margin-bottom: 5px;
+}
+
+.form-container {
+    background-color: #fff;
+    color: #1A1924;
+    border-radius: 5px;
+    box-shadow: 0px 2px 3px #353341;
+    padding: 20px;
+}
+
+.form-container form {
+    margin-top: 10px;
+}
+
+.form-container form div {
+    display: grid;
+}
+
+.form-container form div label {
+    font-weight: 500;
+}
+
+.form-container form div input[type='text'] {
+    background-color: #dcdcdc;
+    border: 1px solid #cecece;
+    padding: 0px 10px
+}
+
+.form-container form div input[type='submit'] {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.form-container form div input[type='submit']:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ------------------------------- */
+/* Not Found page                  */
+/* ------------------------------- */
+section.not-found, section.form-section{
+    height: calc(100vh - 120px);
+}
+
+.not-found h2 {
+    font-size:  clamp(20px, 4vw, 30px);
+}
+
+.btn-go-home{
+    margin-top: 30px;
+}
+
+
+/* ------------------------------- */
+/* Footer                          */
+/* ------------------------------- */
+
+footer {
+    height: 60px;
+    width: 100%;
+    background-color: var(--app-footer-color);
+    color: var(--app-footer-font-color);
+}
+
+footer .flex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+footer .copy p {
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+}
